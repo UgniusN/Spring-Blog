@@ -24,8 +24,10 @@
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" th:field="*{id}">
             </div>
             <div class="form-group">
+                <div class="col-xs-2">
                 <label for="Title">Title</label>
                 <input type="text" class="form-control" id="Title" th:field="*{title}">
+                    </div>
             </div>
             <div class="form-group">
                 <label for="Author">Author</label>
@@ -35,7 +37,7 @@
                 <label for="contentText">Content text</label>
                 <input type="text" class="form-control" id="contentText" th:field="*{articleContent}">
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+            <input type="submit" class="btn btn-success" th:value="${article.id != null ? 'Submit' : 'Create'}"/>
             <a th:href="@{/articles/controlpanel/{id}/delete(id=${article.id})}"><button type="button" class="btn btn-danger">Delete</button></a>
 
         </form>

@@ -48,10 +48,9 @@ public class ArticleController {
 
     @GetMapping("/controlpanel/{id}/edit")
     public String getUpdateProductForm(@PathVariable Long id, Model model) {
-        Article article = getArticle(id);
+        Article article = articleService.getArticle(id);
         model.addAttribute("article", article);
         return "articleedit";
-
     }
 
     @GetMapping("/controlpanel/create")
@@ -68,11 +67,10 @@ public class ArticleController {
         return "articlecontrol";
     }
 
-    public Article getArticle(Long id) {
-        List<Article> articles = articleService.getArticles();
-        return articles.stream()
-                .filter(p -> p.getId().equals(id))
-                .findFirst().orElseThrow(() -> new ArticleNotFoundException("Product with id: " + id + " was not found"));
+    @GetMapping("/{id}")
+    public String getOneArticle(@PathVariable Long id, Model model) {
+        Article article = articleService.getArticle(id);
+        model.addAttribute("article",article);
+        return "article";
     }
-
 }

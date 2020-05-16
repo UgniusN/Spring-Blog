@@ -138,6 +138,7 @@ nav {
     margin-top: 50px !important;
     margin-bottom: 50px;
     padding-bottom: 10px;
+    padding-top: 20px !important;
 }
 
 input {
@@ -162,6 +163,23 @@ table {
     width: 100%;
 }
 
-p newart {
+.newart {
     text-align: right;
+}
+
+.blogpost {
+    color: white;
+    padding: 50px;
+}
+
+.titleblock {
+    float:left;
+}
+
+.titleLine {
+    display: inline-block;
+}
+
+.firstblock {
+    margin-right: 3px;
 }
