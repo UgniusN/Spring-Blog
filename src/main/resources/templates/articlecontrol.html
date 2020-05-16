@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel - MYBLOG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navigationas">
+                 <a class="navbar-brand" href="">MY BLOG</a>
+                 <li class="nav-item active"><a th:href="@{/}">Home</a></li>
+                 <li class="nav-item active"><a th:href="@{/articles}">Articles</a></li>
+            <li class="nav-item active cp"><a th:href="@{/articles/controlpanel}" class="font-blue">Control Panel</a></li>
+            </nav>
+    </header>
+    <section class="forma container">
+        <p class="newart"><a th:href="@{/articles/controlpanel/create}"><button type="button" class="btn btn-primary">New Article</button></a></p>
+        <table class="table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr th:each="article : ${articles}">
+                <td th:text="${article.id}">1</td>
+                <td th:text="${article.title}">Nabasnik</td>
+                <td th:text="${article.author}">Magilanas</td>
+                <td><a th:href="@{/articles/controlpanel/{id}/edit(id=${article.id})}"><button type="button" class="btn btn-success">Edit</button></a></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+</body>
+</html>

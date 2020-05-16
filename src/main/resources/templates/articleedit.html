@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit article - MYBLOG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navigationas">
+                 <a class="navbar-brand" href="">MY BLOG</a>
+                 <li class="nav-item active"><a th:href="@{/}" class="font-blue">Home</a></li>
+                 <li class="nav-item active"><a th:href="@{/articles}">Articles</a></li>
+            <li class="nav-item active cp"><a th:href="@{/articles/controlpanel}">Control Panel</a></li>
+            </nav>
+    </header>
+    <section class="forma container">
+        <form th:action="@{/articles/controlpanel/submit}" method="post" th:object="${article}" modelAttribute="article">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Id</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" th:field="*{id}">
+            </div>
+            <div class="form-group">
+                <label for="Title">Title</label>
+                <input type="text" class="form-control" id="Title" th:field="*{title}">
+            </div>
+            <div class="form-group">
+                <label for="Author">Author</label>
+                <input type="text" class="form-control" id="Author" th:field="*{author}">
+            </div>
+            <div class="form-group">
+                <label for="contentText">Content text</label>
+                <input type="text" class="form-control" id="contentText" th:field="*{articleContent}">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a th:href="@{/articles/controlpanel/{id}/delete(id=${article.id})}"><button type="button" class="btn btn-danger">Delete</button></a>
+
+        </form>
+    </section>
+
+
+</body>
+</html>

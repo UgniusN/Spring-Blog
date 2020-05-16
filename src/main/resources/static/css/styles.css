@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #24252A;
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+li {
+    padding-right: 20px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+li a {
+    color: white;
+}
+
+li a:link {
+    color: white;
+    text-decoration: none;
+    color: white;
+}
+
+li a:hover {
+    transition-timing-function: ease-in;
+    color:#0d89d4;
+}
+
+.cp {
+    margin-left: 77%;
+}
+
+.main-art {
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-art h1 {
+    color: black;
+}
+
+.artbox {
+    width: 35%;
+    background-color: white;
+}
+
+.artbox-img {
+    width: 100%;
+}
+
+.artbox h1 {
+    background-color: white;
+}
+
+.artbox p {
+    background-color: white;
+}
+
+.artbox-text-inner {
+    margin: 15px;
+}
+
+#land-title {
+    color: #0d89d4;
+}
+
+.font-blue {
+    color: #0d89d4;
+}
+
+.articleBox {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: baseline;
+    align-content: stretch;
+    width: 1000px;
+    padding-bottom: 100px;
+    margin-bottom: 70px;
+}
+
+.article-card {
+    margin: 20px;
+    background-color: #0d89d4;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 50px 270px 40px;
+    grid-template-areas: "title" "text" "button";
+    text-align: center;
+
+}
+
+.footeris {
+    color: white;
+    background-color: #24252A;
+    width: 100%;
+    height: 100px;
+}
+
+nav {
+    position: fixed;
+}
+
+.card-title {
+    padding: 9px;
+    text-align: center;
+    grid-area: title;
+    background-color: white;
+}
+
+.card-text {
+
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    grid-area: text;
+    background-color: #0d89d4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 270px;
+    color: white;
+}
+
+.card-button {
+    grid-area: button;
+    background-color: white;
+}
+
+.forma {
+    color: white;
+    margin-top: 50px !important;
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+}
+
+input {
+    background-color: white;
+}
+
+th {
+    padding-left: 50px;
+    text-align: left;
+    padding-top: 10px;
+}
+
+th, td {
+    padding:5px;
+}
+
+section container {
+    background-color: white;
+}
+
+table {
+    width: 100%;
+}
+
+p newart {
+    text-align: right;
+}
