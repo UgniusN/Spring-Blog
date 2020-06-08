@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel - MYBLOG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body id="cpmanage">
+<div th:replace="fragments/main.html :: cpnavigation">
+</div>
+<div class="cpbody">
+    <h1 class="cpcattitle">Manage comments</h1>
+    <div class="lentele">
+    <table class="table-striped table-light">
+        <thead>
+        <tr>
+            <th scope="col">Comment ID</th>
+            <th scope="col">Article ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Comment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="comment : ${comments}">
+            <td th:text="${comment.id}"></td>
+            <td th:text="${comment.article.id}"></td>
+            <td th:text="${comment.commenttitle}"></td>
+            <td th:text="${comment.commentcontent}"></td>
+            <td><a th:href="@{/articles/controlpanel/comment/{id}/edit(id=${comment.id})}"><button type="button" class="btn btn-success">Edit</button></a></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+    </section>
+</div>
+</body>
+</html>

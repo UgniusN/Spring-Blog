@@ -10,12 +10,8 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navigationas">
-                 <a class="navbar-brand" href="">MY BLOG</a>
-                 <li class="nav-item active"><a th:href="@{/}">Home</a></li>
-                 <li class="nav-item active"><a th:href="@{/articles}">Articles</a></li>
-            <li class="nav-item active cp"><a th:href="@{/articles/controlpanel}" class="font-blue">Control Panel</a></li>
-            </nav>
+        <nav th:replace="fragments/main.html :: navigation">
+        </nav>
     </header>
     <section class="forma container">
         <p class="newart"><a th:href="@{/articles/controlpanel/create}"><button type="button" class="btn btn-primary">New Article</button></a></p>
@@ -30,9 +26,9 @@
             </thead>
             <tbody>
             <tr th:each="article : ${articles}">
-                <td th:text="${article.id}">1</td>
-                <td th:text="${article.title}">Nabasnik</td>
-                <td th:text="${article.author}">Magilanas</td>
+                <td th:text="${article.id}"></td>
+                <td th:text="${article.title}"></td>
+                <td th:text="${article.author}"></td>
                 <td><a th:href="@{/articles/controlpanel/{id}/edit(id=${article.id})}"><button type="button" class="btn btn-success">Edit</button></a></td>
             </tr>
             </tbody>

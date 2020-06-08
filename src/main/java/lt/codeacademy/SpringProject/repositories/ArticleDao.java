@@ -1,9 +1,13 @@
 package lt.codeacademy.SpringProject.repositories;
 
-import lt.codeacademy.SpringProject.Article;
+import lt.codeacademy.SpringProject.entities.Article;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 public interface ArticleDao extends JpaRepository<Article, Long> {
+    List<Article> getArticleByTitle(String title);
+
+    List<Article> findByAuthorIsContaining(String author);
+
 }

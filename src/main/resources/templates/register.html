@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Panel - MYBLOG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body class="whitebody">
+<div class="logincontainer">
+    <div>
+        <a class="navbar-brand loginlogo" href="">MY BLOG</a>
+    </div>
+    <form th:action="@{/registracija-submit}" th:object="${user}" modelAttribute="user" method="POST">
+        <div class="col-xs-2">
+            <label for="ex1" th:text="#{vartotojovardas}">Username</label>
+            <input class="form-control" id="ex1" type="text" name="user" th:field="*{username}">
+        </div>
+        <div class="col-xs-2">
+            <label for="be" th:text="#{vardas}">Name</label>
+            <input class="form-control" id="be" type="text" name="pass1" th:field="*{name}">
+        </div>
+        <div class="col-xs-2">
+            <label for="ber" th:text="#{vartotojoslaptazodis} ">Password</label>
+            <input class="form-control" id="ber" type="password" name="pass" th:field="*{password}">
+        </div>
+        <div class="col-xs-2">
+            <label for="be" th:text="#{pakartotislaptazodi}">Repeat password</label>
+            <input class="form-control" id="be" type="password" name="pass1">
+        </div>
+        <div>
+            <button type="submit" class="buttonas btn btn-primary" th:text="#{registruotis}">Register</button>
+        </div>
+        <div>
+            <a th:href="@{/prisijungimas}"><button type="button" class="registerButton btn btn-secondary" th:text="#{griztiprisijungima}">Back to login</button></a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
